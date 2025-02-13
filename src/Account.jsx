@@ -7,7 +7,7 @@ import "./Account.css";
 
 const Account = () => {
   const user = useSelector((state) => state.auth.user);
-  const { data: userData, error, isLoading } = useGetUserQuery(user?.id);
+  const { data: userData, error, isLoading } = useGetUserQuery(); // ✅ No need for (user?.id)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -23,11 +23,11 @@ const Account = () => {
   return (
     <div className="account-container">
       <h2>My Account</h2>
-      <p><strong>Name:</strong> {userData.name}</p>
-      <p><strong>Email:</strong> {userData.email}</p>
+      <p><strong>Name:</strong> {userData?.name}</p>
+      <p><strong>Email:</strong> {userData?.email}</p>
 
       <h3>Checked-Out Books</h3>
-      {userData.checkedOutBooks.length > 0 ? (
+      {userData?.checkedOutBooks?.length > 0 ? (
         <ul>
           {userData.checkedOutBooks.map((book) => (
             <li key={book.id}>

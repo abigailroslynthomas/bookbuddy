@@ -1,0 +1,25 @@
+/* Prevent content from being hidden behind the fixed navbar */
+body {
+  margin: 0;
+  padding-top: 60px; /* Adjust based on navbar height */
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+
+h1, h2, h3 {
+  color: #333;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
