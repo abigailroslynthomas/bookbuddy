@@ -8,12 +8,13 @@ const Home = () => {
 
   if (isLoading) return <p>Loading books...</p>;
   if (error) return <p>Error loading books!</p>;
+  console.log(books);
 
   // Filter books based on search input
-  const filteredBooks = books.filter((book) =>
+  const filteredBooks =books ? books.books.filter((book) =>
     book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
     book.author.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  ): null;
 
   return (
     <div>
